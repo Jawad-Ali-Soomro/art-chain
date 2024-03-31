@@ -1,0 +1,57 @@
+.header{
+    width: 100vw ;
+    height: 15vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .logo{
+        gap: 50px;
+        margin-left: 100px;
+        img{
+            width: 150px;
+            cursor: pointer;
+        }
+        .search-bar{
+            width: 400px;
+            height: 45px;
+            border: 1px solid rgba($color: #000000, $alpha: 0.1);
+            border-radius: 10px;
+            justify-content: center;
+            overflow: hidden;
+            input {
+                width: 350px;
+                height: 100%;
+                border: none;
+                outline: none;
+                padding-left: 20px;
+                outline: none;
+                background: transparent;
+                font-size: .9rem;
+            }
+            .icon{
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+        }
+    }
+    .navs{
+        margin-right: 100px;
+        ul{
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+            li{
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            .account {
+                padding: 15px;
+                font-size: 1.3rem;
+                border-radius: 50%;
+                color: #111;
+                border: 1px solid rgba($color: #000000, $alpha: 0.1);
+            }
+        }
+    }
+}
