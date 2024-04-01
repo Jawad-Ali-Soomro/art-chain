@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const catch_async_err = require("../middlewares/catch_err");
 const user_schema = new mongoose.Schema({
   username: {
     type: String,
@@ -45,22 +44,28 @@ const user_schema = new mongoose.Schema({
 
 // Pre method to check before saving the data
 
-user_schema.pre(
-  "save",
-  catch_async_err(async (next) => {
+user_schema.pre("save", async function () {
+  try {
     const user = this;
     if (!user.isModified("password")) return next();
     const hashedPassword = await bcrypt.hash(user.password, 10);
     user.password = hashedPassword;
     next();
-  })
-);
-
-user_schema.methods.comparePassword = catch_async_err(
-  async (candidatePassword) => {
-    return await bcrypt.compare(candidatePassword, this.password);
+  } catch (error) {
+    return res.json({
+      message: error,
+    });
   }
-);
+});
+user_schema.methods.comparePassword = async function (candidatePassword) {
+  try {
+    return await bcrypt.compare(candidatePassword, this.password);
+  } catch (error) {
+    return res.json({
+      message: error,
+    });
+  }
+};
 
 const User = mongoose.model("User", user_schema);
 module.exports = User;
