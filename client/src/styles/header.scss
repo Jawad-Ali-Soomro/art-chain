@@ -44,6 +44,17 @@
             li{
                 font-size: 1.5rem;
                 cursor: pointer;
+                position: relative;
+            }
+            li:not(.account)::after{
+                content: '';
+                width: 10px;
+                height: 10px;
+                background: red;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                border-radius: 50%;
             }
             .account {
                 padding: 15px;
