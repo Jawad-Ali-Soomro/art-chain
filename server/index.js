@@ -5,6 +5,7 @@ const { connect_database } = require("./config/database");
 const user_route = require("./routes/user.route");
 const transaction_route = require("./routes/transaction.route");
 const art_route = require("./routes/art.route");
+const cookieParser = require("cookie-parser");
 connect_database()
 const app = express();
 app.listen(process.env.PORT || 8080, () => {
@@ -15,6 +16,7 @@ app.listen(process.env.PORT || 8080, () => {
 
 app.use(express.json())
 app.use(cors())
+app.use(cookieParser())
 
 // applying routes
 

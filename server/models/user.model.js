@@ -29,6 +29,7 @@ const user_schema = new mongoose.Schema({
   },
   digital_art: [
     {
+      default : [],
       // Ref To Artwork Id
       type: mongoose.Schema.Types.ObjectId,
       ref: "Art",
@@ -36,6 +37,7 @@ const user_schema = new mongoose.Schema({
   ],
   transactions: [
     {
+      default : [],
       type: mongoose.Schema.Types.ObjectId,
       ref: "Transaction",
     },
@@ -52,20 +54,9 @@ user_schema.pre("save", async function () {
     user.password = hashedPassword;
     next();
   } catch (error) {
-    return res.json({
-      message: error,
-    });
+    return console.log(error);
   }
 });
-user_schema.methods.comparePassword = async function (candidatePassword) {
-  try {
-    return await bcrypt.compare(candidatePassword, this.password);
-  } catch (error) {
-    return res.json({
-      message: error,
-    });
-  }
-};
 
 const User = mongoose.model("User", user_schema);
 module.exports = User;
