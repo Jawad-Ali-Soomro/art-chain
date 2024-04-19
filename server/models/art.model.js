@@ -26,3 +26,6 @@ const art_schema = new mongoose.Schema({
     required: [true, "Please Enter The Price!"],
   },
 });
+
+const Art = mongoose.model("Art" , art_schema)
+module.exports = Art

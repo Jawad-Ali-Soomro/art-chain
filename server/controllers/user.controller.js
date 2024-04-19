@@ -25,7 +25,7 @@ exports.create_account = catch_async_err(async (req, res) => {
 });
 
 exports.login_user = catch_async_err(async (req, res) => {
-  const found_user = await User.findOne({ email: req.body.email });
+  const found_user = await User.findOne({ email: req.body.email }).select("+password")
   if (!found_user) {
     return res.json({
       message: "Account Not Found!",
@@ -73,17 +73,17 @@ exports.update_profile = catch_async_err(async (req, res) => {
     const updated_account = await User.findByIdAndUpdate(compared_token._id, {
       username: req.body.username,
       avatar: req.body.avatar,
-      bio : req.body.bio,
-      wallet_address : req.body.wallet_address
+      bio: req.body.bio,
+      wallet_address: req.body.wallet_address,
     });
-    if(!updated_account) {
+    if (!updated_account) {
       return res.json({
-        message : "Error While Updating Account!"
-      })
-    }else {
+        message: "Error While Updating Account!",
+      });
+    } else {
       return res.json({
-        updated_account
-      })
+        updated_account,
+      });
     }
   }
 });

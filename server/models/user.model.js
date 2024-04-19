@@ -16,6 +16,7 @@ const user_schema = new mongoose.Schema({
     min: 6,
     // Maximum 16 Characters
     max: 16,
+    select : false
   },
   avatar: {
     type: String,
@@ -49,7 +50,7 @@ const user_schema = new mongoose.Schema({
 user_schema.pre("save", async function () {
   try {
     const user = this;
-    if (!user.isModified("password")) return next();
+    if (!user.isModified("password")) return
     const hashedPassword = await bcrypt.hash(user.password, 10);
     user.password = hashedPassword;
     next();
