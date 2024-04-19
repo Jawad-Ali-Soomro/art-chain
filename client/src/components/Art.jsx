@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/art.scss";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { base_art_url } from "../constants/base_url";
 import { BiHeart, BiLogoFacebook, BiLogoGithub, BiLogoInstagram, BiLogoTwitter } from "react-icons/bi";
 
 const Art = () => {
+  const navigate = useNavigate()
   const [coming_data, set_data] = useState([]);
   const get_data = async () => {
     await axios
@@ -36,7 +37,7 @@ const Art = () => {
                 <img src={art?.ipfs_hash} alt="" />
                 <div className="options flex">
                   <BiHeart className="icon" />
-                  <button>Buy</button>
+                  <button onClick={() => navigate(`/art/${art._id}`)}>Buy</button>
                 </div>
               </div>
             );
