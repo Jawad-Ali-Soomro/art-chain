@@ -12,12 +12,13 @@ const Header = () => {
     <div className="header flex between">
       <div className="logo flex">
         <img src="./logo.png" alt="" />
-        <div className="search-bar flex">
+        
+      </div>
+      <div className="navs flex">
+      <div className="search-bar flex">
           <input type="text" />
           <BiSearch className="icon" />
         </div>
-      </div>
-      <div className="navs">
         <ul className="flex">
           <li className="flex">
             <BiEnvelope />

@@ -1,0 +1,152 @@
+.main-art-page {
+  justify-content: space-between;
+  position: relative;
+  .main-wrap {
+    width: 60%;
+    gap: 50px;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    .art-wrap {
+      gap: 20px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      padding: 0;
+      align-items: start;
+      padding: 20px;
+      img {
+        width: 500px;
+      }
+      .profile {
+        width: 500px;
+        position: relative;
+        gap: 20px;
+        h2 {
+          font-weight: 300;
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          border: 1px solid rgba($color: #000000, $alpha: 0.1);
+          padding: 5px;
+          border-radius: 50%;
+        }
+        .more-option {
+          right: 0;
+          gap: 5px;
+          position: absolute;
+          cursor: pointer;
+          div {
+            width: 5px;
+            height: 5px;
+            background: black;
+            border-radius: 3px;
+          }
+        }
+      }
+      .options {
+        justify-content: right;
+        height: 50px;
+        width: 300px;
+        margin-left: 200px;
+        gap: 20px;
+        .icon {
+          font-size: 1.2rem;
+          padding: 11px;
+          border: 1px solid rgba($color: #000000, $alpha: 0.1);
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        button {
+          width: 150px;
+          height: 42px;
+          border: 1px solid rgba($color: #000000, $alpha: 0.1);
+          background: transparent;
+          color: #111;
+          text-transform: uppercase;
+          font-weight: 600;
+          letter-spacing: 2px;
+          cursor: pointer;
+          transition: .3s;
+        }
+        button:hover{
+          background: #111;
+          color: white;
+        }
+        .icon:hover{
+          background: red;
+          color: white;
+        }
+      }
+    }
+  }
+  .copyright-text {
+    position: sticky;
+    top: 30vh;
+    right: 0;
+    width: 40%;
+    height: 60vh;
+    align-items: start;
+    .top {
+      align-items: start;
+      gap: 10px;
+      h1 {
+        font-weight: 300;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+      }
+      input {
+        width: 350px;
+        height: 40px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        outline: none;
+      }
+      button {
+        width: 200px;
+        height: 40px;
+        border: none;
+        background: #111;
+        color: white;
+        font-weight: 400;
+        cursor: pointer;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+    .links {
+      margin-top: 50px;
+      img{
+        width: 150px;
+        cursor: pointer;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 5px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        li {
+          font-size: 0.9rem;
+          cursor: pointer;
+          color: rgba($color: #000000, $alpha: 0.6);
+        }
+        li:hover{
+          color: black;
+        }
+      }
+      .icons{
+        gap: 20px;
+        flex-direction: row;
+        li{
+          font-size: 1.5rem;
+          .text{
+            color: rgba($color: #000000, $alpha: 0.6);
+          }
+          .text:hover{
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

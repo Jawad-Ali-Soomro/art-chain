@@ -5,6 +5,7 @@
     top: 0;
     left: 0;
     z-index: 10;
+    background: white;
     .logo{
         gap: 50px;
         margin-left: 100px;
@@ -12,6 +13,9 @@
             width: 150px;
             cursor: pointer;
         }
+    }
+    .navs{
+        gap: 30px;
         .search-bar{
             width: 400px;
             height: 45px;
@@ -34,8 +38,6 @@
                 padding: 10px;
             }
         }
-    }
-    .navs{
         margin-right: 100px;
         ul{
             justify-content: center;
