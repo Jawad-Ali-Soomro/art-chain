@@ -39,3 +39,18 @@ exports.get_all_arts = catch_async_err(async(req,res) => {
         data : found_arts
     })
 })
+
+exports.get_art_by_id = catch_async_err(async(req,res) => {
+    const id = req.params.id
+    const found_art = await Art.findById(id).populate("owner").populate("previous_owners")
+    if(!found_art) {
+        return res.json({
+            message : "Error While Fteching!"
+        })
+    }
+    else {
+        return res.json({
+            data : found_art
+        })
+    }
+})
