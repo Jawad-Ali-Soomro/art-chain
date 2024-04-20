@@ -49,7 +49,7 @@ const Main = () => {
       <div className="bottom">
         <div className="content flex col">
           <h2>Description</h2>
-          <p>{data?.description}</p>
+          <p>{data?.description.split('.')}</p>
         </div>
         <div className="previous_owner_details flex col">
           <h1>Previous Owners</h1>

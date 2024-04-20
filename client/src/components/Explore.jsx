@@ -22,29 +22,6 @@ const Explore = () => {
         <p>DISCOVER & COLLECT DIGITAL ART</p>
       </div>
       <div className="bottom flex">
-        <div className="left flex col">
-          <div className="categories-wrap">
-            <p>Categories</p>
-            <div className="main-wrap flex">
-              <p>3d</p>
-              <p>Animations</p>
-              <p>2d</p>
-              <p>surreal</p>
-              <p>Abstract</p>
-              <p>illustrations</p>
-              <p>painting</p>
-              <p>digital art</p>
-              <p>Portrait</p>
-            </div>
-          </div>
-          <div className="categories-wrap">
-            <p>PRICE</p>
-            <div className="input-sect flex col">
-              <input type="number" name="" id="" placeholder="ETH ~ MIN" />
-              <input type="number" name="" id="" placeholder="ETH ~ MAX" />
-            </div>
-          </div>
-        </div>
         <div className="right flex">
           {coming_data?.map((art) => {
             return (
