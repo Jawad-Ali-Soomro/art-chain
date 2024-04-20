@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { base_art_url } from "../constants/base_url";
 import Header from "../components/Header";
-import { FaTimes } from 'react-icons/fa'
+import {Helmet} from 'react-helmet'
 
 const Main = () => {
   const id = useParams();
@@ -20,6 +20,10 @@ const Main = () => {
   });
   return (
     <div className="flex col">
+      <Helmet>
+        <title>{`${data?.owner?.username}'s ${data?.title}`}</title>
+      </Helmet>
+      <title>{data?.title}</title>
       <Header />
       <div className="top flex">
         <div className="right flex col">
@@ -49,6 +53,7 @@ const Main = () => {
         </div>
         <div className="previous_owner_details flex col">
           <h1>Previous Owners</h1>
+          <div className="flex" style={{gap:'20px'}}>
           {data?.previous_owners?.map((image) => {
             return (
               <div className="wrap flex" data-after={image.username} key={image._id}>
@@ -57,10 +62,11 @@ const Main = () => {
               </div>
             );
           })}
+          </div>
         </div>
       </div>
       {show_image == true ? (
-        <div className="fullscreen flex">
+        <div className="fullscreen flex" onClick={() => set_show_image(false)}>
           <img src={data?.ipfs_hash} alt="" />
           <div className="icon" onClick={() => set_show_image(false)}>
             <div></div>

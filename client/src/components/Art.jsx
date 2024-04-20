@@ -16,13 +16,14 @@ const Art = () => {
   useEffect(() => {
     get_data();
   });
+  const new_data = coming_data.slice(0,9)
   return (
     <div className="main-art-page flex">
       <div className="flex col main-wrap">
-        {coming_data == undefined ? (
+        {new_data == undefined ? (
           <h1>Loading ...</h1>
         ) : (
-          coming_data.map((art) => {
+          new_data.map((art) => {
             return (
               <div className="art-wrap flex col" key={art._id}>
                 <div className="profile flex">
