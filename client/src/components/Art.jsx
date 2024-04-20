@@ -26,14 +26,9 @@ const Art = () => {
           new_data.map((art) => {
             return (
               <div className="art-wrap flex col" key={art._id}>
-                <div className="profile flex">
+                <div className="profile flex" onClick={() => navigate(`/profile/${art?.owner?._id}`)}>
                   <img src={art?.owner?.avatar} alt="" />
                   <h2>{art?.owner?.username}</h2>
-                  <div className="more-option flex">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
                 </div>
                 <img src={art?.ipfs_hash} alt="" />
                 <div className="options flex">

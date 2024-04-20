@@ -20,19 +20,13 @@
     }
   }
   .bottom {
-    margin-top: 15vh;
     position: relative;
     .right {
       width: 100%;
-      height: 85vh;
-      position: absolute;
-      right: 0;
-      top: 0;
-      overflow: scroll;
       flex-wrap: wrap;
       gap: 50px;
       justify-content: center;
-      padding-bottom: 10vh;
+      padding-bottom: 0;
       .card {
         width: 350px;
         height: 520px;

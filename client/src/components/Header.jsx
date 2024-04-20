@@ -6,11 +6,13 @@ import {
   BiSearch,
   BiUser,
 } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate()
   return (
     <div className="header flex between">
-      <div className="logo flex">
+      <div className="logo flex" onClick={() => navigate('/')}>
         <img src="../public/logo.png" alt="" />
       </div>
       <div className="navs flex">
@@ -25,7 +27,7 @@ const Header = () => {
           <li className="flex">
             <BiHeart />
           </li>
-          <li className="flex account">
+          <li className="flex account" onClick={() => navigate('/account')}>
             <BiUser />
           </li>
         </ul>

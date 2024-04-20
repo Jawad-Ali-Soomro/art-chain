@@ -16,30 +16,21 @@
         width: 500px;
       }
       .profile {
-        width: 500px;
+        width: 200px;
         position: relative;
         gap: 20px;
+        cursor: pointer;
+        cursor: pointer;
         h2 {
           font-weight: 300;
         }
         img {
+        cursor: pointer;
           width: 30px;
           height: 30px;
           border: 1px solid rgba($color: #000000, $alpha: 0.1);
           padding: 5px;
           border-radius: 50%;
-        }
-        .more-option {
-          right: 0;
-          gap: 5px;
-          position: absolute;
-          cursor: pointer;
-          div {
-            width: 5px;
-            height: 5px;
-            background: black;
-            border-radius: 3px;
-          }
         }
       }
       .options {

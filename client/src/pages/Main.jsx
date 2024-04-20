@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../styles/main.scss";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { base_art_url } from "../constants/base_url";
 import Header from "../components/Header";
 import {Helmet} from 'react-helmet'
 
 const Main = () => {
+  const navigate = useNavigate()
   const id = useParams();
   const [show_image, set_show_image] = useState(false);
   const [data, set_data] = useState();
@@ -23,12 +24,11 @@ const Main = () => {
       <Helmet>
         <title>{`${data?.owner?.username}'s ${data?.title}`}</title>
       </Helmet>
-      <title>{data?.title}</title>
       <Header />
       <div className="top flex">
         <div className="right flex col">
           <h1>{data?.title}</h1>
-          <div className="owner-info flex">
+          <div className="owner-info flex" onClick={() => navigate(`/profile/${data?.owner?._id}`)}>
             <div className="main flex">
               <img src={data?.owner?.avatar} alt="" />
               <p className="flex">
@@ -49,15 +49,15 @@ const Main = () => {
       <div className="bottom">
         <div className="content flex col">
           <h2>Description</h2>
-          <p>{data?.description.split('.')}</p>
+          <p>{data?.description}</p>
         </div>
         <div className="previous_owner_details flex col">
           <h1>Previous Owners</h1>
           <div className="flex" style={{gap:'20px'}}>
           {data?.previous_owners?.map((image) => {
             return (
-              <div className="wrap flex" data-after={image.username} key={image._id}>
-                <img src={image.avatar} alt="" />
+              <div className="wrap flex" key={image._id} onClick={() => navigate(`/profile/${image?._id}`)} >
+                <img src={image?.avatar} alt="" />
                 <div className="line"></div>
               </div>
             );
