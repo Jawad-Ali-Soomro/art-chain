@@ -43,6 +43,7 @@ exports.login_user = catch_async_err(async (req, res) => {
       const token = await store_token({ data: found_user });
       return res.cookie("token", token).json({
         message: "Logged In Successfully!",
+        token
       });
     }
   }
@@ -87,3 +88,18 @@ exports.update_profile = catch_async_err(async (req, res) => {
     }
   }
 });
+
+exports.get_profiles = catch_async_err(async(req,res) => {
+  const id = req.params.id
+  const found_user = await User.findById(id).populate("digital_art")
+  if(!found_user) {
+    return res.json({
+      message : "Account Not Found!"
+    })
+  }
+  else {
+    return res.json({
+      data : found_user
+    })
+  }
+})
