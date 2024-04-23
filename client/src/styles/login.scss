@@ -2,6 +2,11 @@
     justify-content: space-around;
     height: 100vh;
     gap: 100px;
+    img{
+        width: 500px;
+        border-bottom-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
    .form-wrap{
     gap: 20px;
     align-items: start;

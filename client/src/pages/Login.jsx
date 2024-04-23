@@ -5,7 +5,7 @@ import { BiEnvelope, BiKey } from "react-icons/bi";
 const Login = () => {
   return (
     <div className="flex login-wrap">
-      <img src="./login-banner.png" alt="" />
+      <img src="./collage.png" alt="" />
       <div className="form-wrap flex col">
         <img src="./logo.png" alt="" className="logo" />
         <h1>sign in</h1>

@@ -30,22 +30,22 @@ const Profile = () => {
             <img src={user_data?.avatar} alt="" />
             <div className="profile-content flex col">
               <h3>{user_data?.username}</h3>
-              <p>{user_data?.wallet_address.substring(0, 20)}...</p>
+              <p>{user_data?.wallet_address.substring(0, 15)}...</p>
+              <p>{user_data?.email.substring(0, 15)}...</p>
               <button>Follow</button>
             </div>
           </div>
           <div className="follower-sect flex">
             <div className="flex">
               <h2>Followers</h2>
-              <h2>{user_data?.followers?.length}</h2>
+              <div className="line"></div>
+              <h3>{user_data?.followers?.length}</h3>
             </div>
             <div className="flex">
               <h2>Following</h2>
-              <h2>{user_data?.following?.length}</h2>
+              <div className="line"></div>
+              <h3>{user_data?.following?.length}</h3>
             </div>
-          </div>
-          <div className="bio">
-            <p>{user_data?.bio}</p>
           </div>
         </div>
         <div
@@ -56,7 +56,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="art-bottom flex col">
-        <h1>
+        <h1 data-after={`(${user_data?.digital_art?.length})`}>
           Art From <span>{user_data?.username}</span>
         </h1>
         <div className="art-main flex">
@@ -72,8 +72,10 @@ const Profile = () => {
                   <img src={user_data?.avatar} alt="" />
                   <p>{user_data?.username}</p>
                 </div>
+                <div className="line"></div>
                 <div className="price-wrap flex">
                   <p>Price</p>
+                  <div className="line"></div>
                   <p>{art?.price} eth</p>
                 </div>
               </div>
