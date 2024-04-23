@@ -8,6 +8,10 @@ const art_schema = new mongoose.Schema({
     type: String,
     required: [true, "Please Enter Description!"],
   },
+  category : {
+    default : "Digital",
+    type : String
+  },
   ipfs_hash: {
     type: String,
   },
