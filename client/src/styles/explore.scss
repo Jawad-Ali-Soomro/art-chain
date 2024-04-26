@@ -1,47 +1,79 @@
 .explore-wrap {
   .top {
-    margin-top: 15vh;
-    width: 100vw;
+    width: calc(100vw - 200px);
     height: 50vh;
     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-    align-items: start;
-    justify-content: center;
-    h1 {
-      font-size: 5rem;
-      text-transform: uppercase;
-      font-weight: 900;
-      color: #111;
-      padding-left: 100px;
+    align-items: end;
+    margin-top: 15vh;
+    .left {
+      align-items: start;
+      padding-bottom: 10vh;
+      h1 {
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: #111;
+      }
+      p {
+        font-size: 1.8rem;
+        font-weight: 300;
+      }
     }
-    p {
-      font-size: 1.8rem;
-      font-weight: 300;
-      padding-left: 100px;
+    .right {
+      align-items: center;
+      margin-bottom: 15vh;
+      button {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-transform: uppercase;
+        font-weight: 400;
+        .icon{
+          font-size: 1.5rem;
+        }
+      }
     }
   }
   .bottom {
     position: relative;
+    .found-text {
+      width: 200px;
+      height: 50px;
+      background: white;
+      position: absolute;
+      top: -25px;
+      left: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    position: relative;
     .right {
-      width: 100%;
+      width: calc(100% - 100px);
       flex-wrap: wrap;
       gap: 50px;
-      justify-content: center;
       padding-bottom: 0;
+      margin-left: 100px;
       .card {
-        width: 350px;
-        height: 520px;
+        width: 320px;
+        padding: 15px;
+        height: 500px;
         border: 1px solid rgba($color: #000000, $alpha: 0.1);
         cursor: pointer;
-        img {
-          width: 350px;
+        .main-img {
+          width: 320px;
+          height: 320px;
         }
         .details-wrap {
-          padding-left: 20px;
           h2 {
             font-weight: 300;
             padding-top: 10px;
           }
           .price-wrap {
+            margin-top: 15px;
+            flex-direction: column;
             align-items: start;
             p {
               text-transform: uppercase;
@@ -64,6 +96,9 @@
             }
           }
         }
+      }
+      .card:hover {
+        border: 1px solid;
       }
     }
   }

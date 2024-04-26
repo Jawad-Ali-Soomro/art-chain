@@ -27,7 +27,7 @@ const Art = () => {
             return (
               <div className="art-wrap flex col" key={art._id}>
                 <div className="profile flex" onClick={() => navigate(`/profile/${art?.owner?._id}`)}>
-                  <img src={art?.owner?.avatar} alt="" />
+                  <img src={art?.owner?.avatar} alt="" /> 
                   <h2>{art?.owner?.username}</h2>
                 </div>
                 <img src={art?.ipfs_hash} alt="" />

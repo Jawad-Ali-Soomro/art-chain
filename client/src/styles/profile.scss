@@ -10,56 +10,76 @@
     .profile-main-information {
       margin-left: 100px;
       img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         border: 1px solid rgba($color: #000000, $alpha: 0.1);
-        padding: 5px;
       }
       .profile-content {
-        margin-left: 140px;
+        width: 300px;
+        margin-left: 40px;
         align-items: end;
         justify-content: center !important;
         gap: 10px;
-        h3 {
-          font-weight: 300;
-          color: rgba($color: #000000, $alpha: 0.8);
-          font-size: 1.8rem;
-        }
         p {
           color: rgba($color: #000000, $alpha: 0.8);
           font-size: 0.8rem;
+          position: relative;
+          .icon {
+            cursor: pointer;
+          }
         }
-        button {
-          width: 150px;
-          height: 40px;
-          border: none;
+        p:hover::after{
+          content: 'Copy';
+          padding: 1px 10px;
+          position: absolute;
           color: #111;
           border: 1px solid rgba($color: #000000, $alpha: 0.1);
-          background: transparent;
-          font-size: 0.8rem;
+          top: -100%;
           text-transform: uppercase;
-          font-weight: 300;
-          cursor: pointer;
-          border-radius: 10px;
+          font-weight: 400;
+          font-size: .8rem;
+          padding-right: 12px;
         }
-        button:hover {
-          background: #111;
-          color: white;
+        .username {
+          position: relative;
+          h3 {
+            font-weight: 400;
+            color: rgba($color: #000000, $alpha: 0.8);
+            font-size: 1.7rem;
+          }
+          button{
+            width: 80px;
+            height: 35px;
+            justify-content: center;
+            position: absolute;
+            left: 100%;
+            top: -30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #fff;
+            border: none;
+            background: #111;
+            font-size: .7rem;
+            cursor: pointer;
+            border-radius: 10px;
+            cursor: pointer;
+          }
         }
       }
     }
     .follower-sect {
       margin-left: 100px;
-      margin-top: 50px;
-      gap: 10px;
+      margin-top: 20px;
       div {
-        width: 180px;
-        height: 60px;
+        width: 190px;
+        height: 45px;
         justify-content: space-between;
         padding-left: 20px;
         padding-right: 20px;
         cursor: pointer;
+        border-radius: 10px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
         .line {
           width: 20px;
           height: 0;
@@ -69,7 +89,6 @@
           font-size: 0.9rem;
           text-transform: uppercase;
           font-weight: 300;
-          color: rgba($color: #000000, $alpha: 0.6);
         }
         h3 {
           font-size: 1rem;
@@ -78,20 +97,34 @@
           color: #111;
         }
       }
-      div:first-child {
+    }
+    .about-info {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      margin-left: 100px;
+      margin-top: 20px;
+     .top-info {
+      align-items: start;
+      gap: 5px;
+      h2{
+        width: 410px;
+        height: 40px;
+        padding-left: 10px;
+        font-size: .9rem;
+        font-weight: 300;
+        gap: 10px;
         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-right: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        padding-bottom: 10px;
       }
-      div:last-child {
-        border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-right: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+      p{
+        max-width: 420px;
+        text-align: justify;
+        font-weight: 300;
+        margin-top: 10px;
+        padding-bottom: 10px;
       }
+     }
     }
   }
   .profile-right {
@@ -119,7 +152,7 @@
     position: relative;
 
     span {
-      font-weight: 900;
+      font-weight: 600;
     }
   }
   h1::after {
@@ -147,12 +180,14 @@
       cursor: pointer;
       img {
         width: 310px;
+        height: 300px;
       }
       h2 {
         font-weight: 400;
         font-size: 1.2rem;
         max-width: 320px;
         text-transform: capitalize;
+        margin-top: 10px;
       }
       .avatar-wrap {
         padding-bottom: 10px;
@@ -192,7 +227,7 @@
       }
     }
     .card:hover{
-      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
     }
   }
 }

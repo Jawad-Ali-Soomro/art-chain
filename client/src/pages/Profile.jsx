@@ -5,6 +5,7 @@ import { base_user_url } from "../constants/base_url";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
+import { BiCopy, BiDiamond, BiUserPlus } from "react-icons/bi";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -29,10 +30,21 @@ const Profile = () => {
           <div className="profile-main-information flex">
             <img src={user_data?.avatar} alt="" />
             <div className="profile-content flex col">
-              <h3>{user_data?.username}</h3>
-              <p>{user_data?.wallet_address.substring(0, 15)}...</p>
-              <p>{user_data?.email.substring(0, 15)}...</p>
-              <button>Follow</button>
+              <div className="username flex">
+                <h3>{user_data?.username}</h3>
+                <button className="flex">
+                  follow
+                </button>
+              </div>
+              <p>
+                {user_data?.wallet_address.substring(0, 5)}...{" "}
+                &nbsp;
+                <BiCopy className="icon" />{" "}
+              </p>
+              <p>
+                @{user_data?.handle} &nbsp;
+                <BiCopy className="icon" />{" "}
+              </p>
             </div>
           </div>
           <div className="follower-sect flex">
@@ -45,6 +57,15 @@ const Profile = () => {
               <h2>Following</h2>
               <div className="line"></div>
               <h3>{user_data?.following?.length}</h3>
+            </div>
+          </div>
+          <div className="about-info flex col">
+            <div className="top-info flex col">
+              <h2 className="flex">
+                <BiDiamond />
+                Joined {user_data?.iat}
+              </h2>
+              <p>{user_data?.bio}</p>
             </div>
           </div>
         </div>
