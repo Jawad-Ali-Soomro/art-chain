@@ -10,6 +10,10 @@ const user_schema = new mongoose.Schema({
     required: [true, "Please Enter Email!"],
     unique: true,
   },
+  handle :{
+    type : String,
+    unique : [true , "Handle Is Alredy Taken Please Try A New One!"]
+  },
   password: {
     type: String,
     // Minimum 6 Characters
