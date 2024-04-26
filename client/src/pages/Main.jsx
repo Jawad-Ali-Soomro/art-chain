@@ -41,6 +41,9 @@ const Main = () => {
               </p>
             </div>
           </div>
+          <div className="category-info">
+            <p>{data?.category}</p>
+          </div>
           <div className="price-info flex col">
             <p>Price</p>
             <h2>{data?.price} ETH</h2>

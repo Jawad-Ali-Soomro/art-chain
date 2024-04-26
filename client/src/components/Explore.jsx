@@ -43,6 +43,9 @@ const Explore = () => {
                   <div className="price-wrap flex col">
                     <p>Price</p>
                     <h3>{art?.price} ETH</h3>
+                    {
+                      art?.price >= 100 ? <div className="tag flex"><p>RARE</p></div> : this
+                    }
                   </div>
                   <div className="owner-wrap flex">
                     <img src={art?.owner?.avatar} alt="" />
