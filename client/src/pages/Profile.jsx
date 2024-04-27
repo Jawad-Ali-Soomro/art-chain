@@ -5,7 +5,7 @@ import { base_user_url } from "../constants/base_url";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
-import { BiCopy, BiDiamond, BiUserPlus } from "react-icons/bi";
+import { BiCopy, BiDiamond, BiMedal } from "react-icons/bi";
 import Footer from "../components/Footer";
 
 const Profile = () => {
@@ -33,13 +33,10 @@ const Profile = () => {
             <div className="profile-content flex col">
               <div className="username flex">
                 <h3>{user_data?.username}</h3>
-                <button className="flex">
-                  follow
-                </button>
+                <button className="flex">follow</button>
               </div>
               <p>
-                {user_data?.wallet_address.substring(0, 5)}...{" "}
-                &nbsp;
+                {user_data?.wallet_address.substring(0, 5)}... &nbsp;
                 <BiCopy className="icon" />{" "}
               </p>
               <p>
@@ -63,7 +60,23 @@ const Profile = () => {
           <div className="about-info flex col">
             <div className="top-info flex col">
               <h2 className="flex">
-                <BiDiamond />
+                <div
+                  className="medal flex"
+                  style={{
+                    background: `${
+                      user_data?.digital_art?.length <= 5
+                        ? "#d7d7d7"
+                        : user_data?.digital_art?.length > 5
+                        ? "goldenrod"
+                        : ""
+                    }`,
+                    color: `${
+                      user_data?.digital_art?.length <= 5 ? "black" : "white"
+                    }`,
+                  }}
+                >
+                  <BiMedal />
+                </div>
                 Joined {user_data?.iat}
               </h2>
               <p>{user_data?.bio}</p>

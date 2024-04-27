@@ -3,7 +3,7 @@ import "../styles/explore.scss";
 import { base_art_url } from "../constants/base_url";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { BiFilter } from 'react-icons/bi'
+import { BiFilter, BiMedal } from "react-icons/bi";
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -34,13 +34,36 @@ const Explore = () => {
                   <div className="price-wrap flex col">
                     <p>Price</p>
                     <h3>{art?.price} ETH</h3>
-                    {
-                      art?.price >= 100 ? <div className="tag flex"><p>RARE</p></div> : this
-                    }
+                    {art?.price >= 100 ? (
+                      <div className="tag flex">
+                        <p>RARE</p>
+                      </div>
+                    ) : (
+                      this
+                    )}
                   </div>
                   <div className="owner-wrap flex">
                     <img src={art?.owner?.avatar} alt="" />
                     <p>{art?.owner?.username}</p>
+                    <div
+                      className="medal flex"
+                      style={{
+                        background: `${
+                          art?.owner?.digital_art?.length <= 5
+                            ? "#d7d7d7"
+                            : art?.owner?.digital_art?.length > 5
+                            ? "goldenrod"
+                            : ""
+                        }`,
+                        color: `${
+                          art?.owner?.digital_art?.length <= 5
+                            ? "black"
+                            : "white"
+                        }`,
+                      }}
+                    >
+                      <BiMedal />
+                    </div>
                   </div>
                 </div>
               </div>

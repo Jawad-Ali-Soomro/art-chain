@@ -7,13 +7,13 @@
   .profile-left {
     height: 100%;
     justify-content: center !important;
+    position: relative;
     .profile-main-information {
       margin-left: 100px;
       img {
         width: 120px;
         height: 120px;
         border-radius: 50%;
-        border: 1px solid rgba($color: #000000, $alpha: 0.1);
       }
       .profile-content {
         width: 300px;
@@ -110,9 +110,15 @@
       align-items: start;
       gap: 5px;
       h2{
+      .medal{
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        font-size: 1rem;
+        border-radius: 50%;
+      }
         width: 410px;
         height: 40px;
-        padding-left: 10px;
         font-size: .9rem;
         font-weight: 300;
         gap: 10px;
