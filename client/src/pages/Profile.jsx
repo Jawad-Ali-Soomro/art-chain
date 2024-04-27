@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
 import { BiCopy, BiDiamond, BiUserPlus } from "react-icons/bi";
+import Footer from "../components/Footer";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -77,7 +78,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="art-bottom flex col">
-        <h1 data-after={`(${user_data?.digital_art?.length})`}>
+        <h1 data-after={`${user_data?.digital_art?.length}`}>
           Art From <span>{user_data?.username}</span>
         </h1>
         <div className="art-main flex">
@@ -104,6 +105,7 @@ const Profile = () => {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

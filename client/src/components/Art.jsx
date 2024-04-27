@@ -41,7 +41,7 @@ const Art = () => {
         )}
       </div>
       <div className="copyright-text flex col">
-        <div className="top flex col">
+        <div className="main-top flex col">
           <h1>NEWSLETTER</h1>
           <input type="text" />
           <button>Subscribe</button>

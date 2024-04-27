@@ -1,0 +1,74 @@
+.main-footer {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  width: calc(100% - 200px);
+  border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+  justify-content: space-between;
+  .copy {
+    align-items: start;
+    img {
+      width: 200px;
+      cursor: pointer;
+    }
+  }
+  .newsletter {
+    align-items: start;
+    gap: 10px;
+    p {
+      font-weight: 300;
+    }
+    .wrap {
+      width: 400px;
+      height: 40px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
+      input {
+        width: 290px;
+        height: 100%;
+        padding-left: 10px;
+        border: none;
+        outline: none;
+      }
+      button {
+        width: 100px;
+        height: 100%;
+        border: none;
+        background: #111;
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+    }
+  }
+  .links {
+    ul {
+      align-items: start;
+      gap: 10px;
+      li {
+        list-style: none;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+    }
+  }
+  .icons {
+    gap: 10px;
+    transition: 0.3s;
+    .icon {
+      font-size: 1.5rem;
+      transition: 0.3s;
+      color: black;
+    }
+  }
+  .icons:hover {
+    .icon {
+      color: rgba($color: #000000, $alpha: 0.3);
+    }
+    .icon:hover {
+      color: black;
+    }
+  }
+}

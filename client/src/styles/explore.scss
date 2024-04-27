@@ -1,39 +1,4 @@
 .explore-wrap {
-  .top {
-    width: calc(100vw - 200px);
-    height: 50vh;
-    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-    align-items: end;
-    margin-top: 15vh;
-    .left {
-      align-items: start;
-      padding-bottom: 10vh;
-      h1 {
-        font-size: 5rem;
-        text-transform: uppercase;
-        font-weight: 900;
-        color: #111;
-      }
-      p {
-        font-size: 1.8rem;
-        font-weight: 300;
-      }
-    }
-    .right {
-      align-items: center;
-      margin-bottom: 15vh;
-      button {
-        justify-content: space-between;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-transform: uppercase;
-        font-weight: 400;
-        .icon{
-          font-size: 1.5rem;
-        }
-      }
-    }
-  }
   .bottom {
     position: relative;
     .found-text {

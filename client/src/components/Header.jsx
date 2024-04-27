@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/header.scss";
 import {
   BiEnvelope,
+  BiGroup,
   BiHeart,
   BiSearch,
   BiUser,

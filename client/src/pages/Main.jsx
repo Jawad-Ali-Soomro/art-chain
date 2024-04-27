@@ -6,6 +6,7 @@ import { base_art_url } from "../constants/base_url";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet";
 import { BiBullseye, BiHappyHeartEyes, BiStreetView } from "react-icons/bi";
+import Footer from "../components/Footer";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ const Main = () => {
       ) : (
         this
       )}
+      <Footer />
     </div>
   );
 };

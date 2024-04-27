@@ -18,15 +18,6 @@ const Explore = () => {
   });
   return (
     <div className="explore-wrap flex col">
-      <div className="top flex">
-        <div className="left flex col">
-          <h1>Explore</h1>
-          <p>DISCOVER & COLLECT DIGITAL ART</p>
-        </div>
-        <div className="right flex between">
-          <button className="flex">Filter <BiFilter className="icon" /></button>
-        </div>
-      </div>
       <div className="bottom flex">
         <p className="found-text">{coming_data?.length} results found</p>
         <div className="right flex">
